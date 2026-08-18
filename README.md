@@ -1,4 +1,4 @@
-# Raman Mankar — Portfolio
+# Raman Mankar — Portfolio Website
 
 Static site (HTML/CSS/JS) plus one small serverless function that powers a
 resume-grounded chat assistant.
