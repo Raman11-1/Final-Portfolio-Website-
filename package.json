@@ -1,0 +1,9 @@
+{
+  "name": "raman-mankar-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static portfolio site with a Vercel serverless function powering a resume-grounded chat assistant.",
+  "engines": {
+    "node": ">=18"
+  }
+}

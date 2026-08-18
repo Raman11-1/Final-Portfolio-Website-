@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raman Mankar — AI-Focused Python Developer</title>
+<meta name="description" content="Raman Mankar builds agentic AI systems and self-optimizing pipelines. Portfolio, experience, and projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- background grid / noise layer -->
+<div class="bg-grid" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a href="#top" class="logo">RM<span class="logo-dot">.</span></a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-list" id="navList">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="https://drive.google.com/file/d/19Uwl9OOJ6BaQGPmdwRdDoYoKQmuzWSjM/view?usp=sharing" class="btn btn-ghost nav-cta" target="_blank" rel="noopener">Resume ↗</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">AI / ML ENGINEER — AGENTIC SYSTEMS</p>
+        <h1 class="hero-title">Raman Mankar</h1>
+        <p class="hero-sub">
+          I build software that watches its own output, finds where it's wrong,
+          and rewrites its own rules to fix it — then ships that as production
+          pipelines, not demos.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See the work</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+        </div>
+        <div class="hero-meta">
+          <span>📍 Ramnagar, Wardha, India</span>
+          <span class="dot-sep">•</span>
+          <span>MTech CSE @ IIT Hyderabad</span>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-hidden="true">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="tdot t-r"></span><span class="tdot t-y"></span><span class="tdot t-g"></span>
+            <span class="terminal-title">skillopt.log</span>
+          </div>
+          <pre class="terminal-body" id="logStream"></pre>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue"><span></span></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="section-inner about-grid">
+      <div class="badge-wrap reveal">
+        <div class="id-badge">
+          <img src="assets/profile-circle.png" alt="Portrait of Raman Mankar" class="id-photo">
+          <div class="id-strip">
+            <span>OPERATOR // RM‑2026</span>
+            <span>ROLE: AI ENGINEER</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-copy reveal">
+        <p class="kicker">01 · About</p>
+        <h2 class="section-title">Two years in production, one running question in research.</h2>
+        <p>
+          I'm an AI-focused Python developer with two years building agentic AI
+          systems, generative AI pipelines, and production-grade automation.
+          At Micron, I built <strong>SkillOpt</strong> — a system that grades its
+          own classification runs against a validation gate and rewrites its own
+          logic when it falls short, lifting accuracy on unseen firmware logs by
+          18%. Before that, at TCS on the Jaguar Land Rover account, I moved data
+          through cloud pipelines on GCP, where a MongoDB "document-inside-document"
+          trigger design cut processing time by a fifth.
+        </p>
+        <p>
+          I'm currently pursuing an MTech in Computer Science and Engineering at
+          IIT Hyderabad. The question I keep returning to: how do you build
+          software that improves itself with <em>less</em> supervision, not more?
+        </p>
+
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat-num">18%</span>
+            <span class="stat-label">accuracy gain, SkillOpt validation</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">20%</span>
+            <span class="stat-label">faster data flow, TCS pipeline</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">2+ yrs</span>
+            <span class="stat-label">production Python experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section section-alt" id="experience">
+    <div class="section-inner">
+      <p class="kicker reveal">02 · Experience</p>
+      <h2 class="section-title reveal">Where the work happened.</h2>
+
+      <div class="timeline">
+
+        <article class="tl-item reveal">
+          <div class="tl-date">Jun — Jul 2026</div>
+          <div class="tl-body">
+            <h3>AI/ML Research Intern <span class="tl-org">— Micron (Applied AI)</span></h3>
+            <ul>
+              <li>Built <strong>SkillOpt</strong>, a self-optimizing AI skill for automated NVMe firmware log error classification, replacing slow manual log review with an AI-driven pipeline.</li>
+              <li>Designed an adversarial optimizer–target model loop with a validation gate that iteratively refined the skill, improving classification accuracy by <strong>18%</strong> on unseen validation logs.</li>
+              <li>Built and deployed a plugin packaging SkillOpt for testing; ran cost-per-run and accuracy analysis across multiple model configurations and documented the full architecture for team handoff.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-date">Feb 2024 — Jun 2025</div>
+          <div class="tl-body">
+            <h3>Python Developer <span class="tl-org">— TCS (Jaguar Land Rover account) · Project Kubricks</span></h3>
+            <ul>
+              <li>Built Cloud Functions on GCP and triggers to initiate dataset changes as a web Python developer.</li>
+              <li>Maintained technical documentation in Confluence and ran an Agile workflow on Jira.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-date">Aug 2023 — Jan 2024</div>
+          <div class="tl-body">
+            <h3>Python MongoDB Developer <span class="tl-org">— TCS (Jaguar Land Rover account) · Project Product 360</span></h3>
+            <ul>
+              <li>Worked on a research project to increase data-flow efficiency between ODS and ODL middleware layers.</li>
+              <li>Added MongoDB triggers to guarantee required changes propagated correctly.</li>
+              <li>Sped up trigger execution with a "document-inside-document" technique, increasing data flow by <strong>20%</strong>.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-date">Jan — May 2023</div>
+          <div class="tl-body">
+            <h3>Full Stack Developer <span class="tl-org">— DTree Labs LLP · RCC UPSC Portal</span></h3>
+            <ul>
+              <li>Built the portal with React.js, Next.js, and Mantine UI.</li>
+              <li>Wrote Mantine UI components backed by REST services.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <p class="kicker reveal">03 · Projects</p>
+      <h2 class="section-title reveal">Selected builds.</h2>
+
+      <div class="project-grid">
+
+        <article class="project-card featured reveal">
+          <div class="project-top">
+            <span class="project-tag">Featured · Research</span>
+            <span class="project-date">Jun – Jul 2026</span>
+          </div>
+          <h3>SkillOpt — Self-Optimizing Log Classifier</h3>
+          <p>
+            An AI skill that automates NVMe firmware log error classification for
+            Micron, replacing manual review. An adversarial optimizer–target loop
+            checks its own output against a validation gate and refines itself,
+            lifting accuracy 18% on unseen logs. Packaged as a plugin with
+            cost-per-run and accuracy benchmarking across model configs.
+          </p>
+          <ul class="tag-list">
+            <li>Python</li><li>LLM Agents</li><li>Evaluation Loops</li><li>Firmware Logs</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-tag">Agentic AI</span>
+            <span class="project-date">Feb – Mar 2026</span>
+          </div>
+          <h3>Fitness Coach — Agentic AI WebApp</h3>
+          <p>
+            A hybrid agent-based personal fitness coach built for a hackathon,
+            combining planning, monitoring, reasoning, and motivational agents in
+            a daily goal-oriented loop that adapts plans from user feedback and trends.
+          </p>
+          <ul class="tag-list">
+            <li>FastAPI</li><li>React</li><li>MongoDB</li><li>LLMs</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-tag">Document AI</span>
+            <span class="project-date">Apr – May 2026</span>
+          </div>
+          <h3>Tractor Invoice Predictor</h3>
+          <p>
+            Extracts structured data from unstructured tractor-invoice images to
+            predict tractor cost automatically — a hands-on pass through Document
+            AI, computer vision, and OCR pipelines under real deployment constraints.
+          </p>
+          <ul class="tag-list">
+            <li>Document AI</li><li>OCR</li><li>Computer Vision</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-tag">ML</span>
+            <span class="project-date">Dec 2025 – Jan 2026</span>
+          </div>
+          <h3>Height Estate — House Price Prediction</h3>
+          <p>
+            A house-price predictor built from scratch — data processing through
+            model training — based on feature engineering and correlation
+            analysis, with a clean Next.js front end.
+          </p>
+          <ul class="tag-list">
+            <li>Python</li><li>scikit-learn</li><li>Next.js</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-tag">Agentic Tooling</span>
+            <span class="project-date">2026</span>
+          </div>
+          <h3>Bug Tracking System — MCP Server for Claude Code</h3>
+          <p>
+            A semiconductor-focused bug tracker exposed as native Claude Code
+            tools through an MCP server. Imports CVEs from NVD and issues from
+            GitHub, runs AI-powered triage with chip-family detection
+            (Intel / AMD / ARM / NVIDIA), and ships custom skills like
+            <code>/bug-triage</code> and <code>/bug-report</code>.
+          </p>
+          <ul class="tag-list">
+            <li>Python</li><li>MCP</li><li>Claude Code</li><li>SQLite</li>
+          </ul>
+          <a class="project-link" href="https://github.com/Raman11-1/Bug_Tracking_System" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <span class="project-tag">Research</span>
+            <span class="project-date">IIT Hyderabad · 2026</span>
+          </div>
+          <h3>PH-Reg — Self-Distilled Registers for ViTs</h3>
+          <p>
+            Visual Computing coursework: reproduced PH-Reg, which uses
+            self-distillation to strip artifact tokens out of Vision
+            Transformer features, then extended it with two original ideas —
+            Frequency-Domain Augmentation and an Artifact-Aware Adaptive Loss —
+            lifting cosine similarity to clean features to 1.000, up from
+            0.972–0.986 for spatial-shift augmentation alone.
+          </p>
+          <ul class="tag-list">
+            <li>PyTorch</li><li>Vision Transformers</li><li>CLIP</li><li>Research</li>
+          </ul>
+          <a class="project-link" href="https://github.com/Raman11-1/VC" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <article class="project-card building reveal">
+          <div class="project-top">
+            <span class="project-tag tag-building">Building now</span>
+          </div>
+          <h3>This Portfolio — Now with a RAG Chat Assistant</h3>
+          <p>
+            The site you're on right now. Next up: a small retrieval-augmented
+            chat widget in the corner that answers recruiter questions —
+            "does he know FastAPI?", "what did he build at Micron?" — using
+            only my resume and project write-ups as context. A live, working
+            example of the RAG pattern instead of just a line on a resume.
+          </p>
+          <ul class="tag-list">
+            <li>RAG</li><li>LLM APIs</li><li>Serverless</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section-alt" id="skills">
+    <div class="section-inner">
+      <p class="kicker reveal">04 · Skills</p>
+      <h2 class="section-title reveal">Toolset.</h2>
+
+      <div class="skill-groups">
+        <div class="skill-group reveal">
+          <h3>AI / ML &amp; Generative AI</h3>
+          <ul class="chip-list">
+            <li>Agentic AI Systems</li><li>LLM Application Development</li><li>Generative AI</li><li>Evaluation Loops</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Frontend &amp; Data</h3>
+          <ul class="chip-list">
+            <li>React.js</li><li>Next.js</li><li>Mantine UI</li><li>Bootstrap</li><li>Data Analysis</li><li>Data Visualization</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Tools &amp; Backend</h3>
+          <ul class="chip-list">
+            <li>Python</li><li>FastAPI</li><li>MongoDB</li><li>GCP</li><li>Git</li><li>Jira</li><li>Confluence</li><li>Agile</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Working style</h3>
+          <ul class="chip-list">
+            <li>Technical Documentation</li><li>Communication</li><li>Team Collaboration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <div class="section-inner">
+      <p class="kicker reveal">05 · Education</p>
+      <h2 class="section-title reveal">Academics.</h2>
+
+      <div class="edu-grid">
+        <article class="edu-card reveal">
+          <span class="edu-date">2025 — Present</span>
+          <h3>MTech, Computer Science &amp; Engineering</h3>
+          <p>IIT Hyderabad · CGPA 8.15</p>
+        </article>
+        <article class="edu-card reveal">
+          <span class="edu-date">2019 — 2023</span>
+          <h3>BTech, Computer Science &amp; Engineering</h3>
+          <p>North Maharashtra University · CGPA 9.0</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-alt" id="contact">
+    <div class="section-inner contact-grid">
+      <div class="reveal">
+        <p class="kicker">06 · Contact</p>
+        <h2 class="section-title">Let's talk.</h2>
+        <p class="contact-lede">
+          Open to roles and collaborations in applied AI, agentic systems, and
+          Python engineering. The fastest way to reach me is email.
+        </p>
+
+        <div class="contact-list">
+          <a href="mailto:ramanrsm123@gmail.com" class="contact-row">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            ramanrsm123@gmail.com
+          </a>
+          <a href="tel:+919763086367" class="contact-row">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </span>
+            +91 97630 86367
+          </a>
+          <a href="https://www.linkedin.com/in/raman-mankar-b822411b7/" target="_blank" rel="noopener" class="contact-row">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="7" y1="10" x2="7" y2="17" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="7" r="1.1" fill="currentColor"/><path d="M11 17v-4.5a2.5 2.5 0 015 0V17" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            linkedin.com/in/raman-mankar-b822411b7
+          </a>
+          <a href="https://github.com/Raman11-1" target="_blank" rel="noopener" class="contact-row">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03a9.4 9.4 0 015 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0012 2z" fill="currentColor"/></svg>
+            </span>
+            github.com/Raman11-1
+          </a>
+          <span class="contact-row contact-row-static">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            Ramnagar, Wardha, Maharashtra, India
+          </span>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mbgrplee" method="POST">
+        <label for="cf-name">Name</label>
+        <input id="cf-name" name="name" type="text" required placeholder="Your name">
+
+        <label for="cf-email">Email</label>
+        <input id="cf-email" name="email" type="email" required placeholder="you@example.com">
+
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" rows="5" required placeholder="What are you building?"></textarea>
+
+        <!-- honeypot field — hidden from real visitors, bots tend to fill it in -->
+        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="New message from your portfolio site">
+
+        <button type="submit" class="btn btn-primary form-submit">Send message</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <span>© <span id="year"></span> Raman Mankar. Built with intent, not a template.</span>
+    <a href="#top" class="back-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- ============ CHAT WIDGET — "Ask about Raman" ============ -->
+<div class="chat-widget" id="chatWidget">
+  <button
+    class="chat-toggle"
+    id="chatToggle"
+    aria-expanded="false"
+    aria-controls="chatPanel"
+    aria-label="Open chat to ask about Raman"
+  >
+    <svg class="chat-icon-open" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 4h16v12H8l-4 4V4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </svg>
+    <svg class="chat-icon-close" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <section class="chat-panel" id="chatPanel" role="dialog" aria-label="Ask about Raman" aria-hidden="true">
+    <header class="chat-panel-header">
+      <div>
+        <p class="chat-panel-title">Ask about Raman</p>
+        <p class="chat-panel-sub">Answers pulled from his actual resume &amp; projects</p>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
+    </header>
+
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+      <div class="chat-msg chat-msg-bot">
+        Hi — I'm a small assistant grounded in Raman's actual resume and
+        project write-ups. Ask me things like <em>"what did he build at
+        Micron?"</em> or <em>"does he know FastAPI?"</em>
+      </div>
+    </div>
+
+    <form class="chat-input-row" id="chatForm">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ask a question..."
+        maxlength="500"
+        autocomplete="off"
+        aria-label="Your question"
+      >
+      <button type="submit" class="chat-send" id="chatSend" aria-label="Send question">↑</button>
+    </form>
+  </section>
+</div>
+
+<script src="script.js"></script>
+<script src="chat-widget.js"></script>
+</body>
+</html>
