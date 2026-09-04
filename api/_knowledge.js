@@ -109,7 +109,7 @@ PROJECTS
 
 8. This portfolio website, including this chat assistant. Built as a static
    site (HTML/CSS/JS) with a serverless function on Vercel that calls the
-   Gemini API to power this chat — a working example of a RAG-style
+   Mistral API to power this chat — a working example of a RAG-style
    assistant grounded only in Raman's real resume and project content.
 
 SKILLS
