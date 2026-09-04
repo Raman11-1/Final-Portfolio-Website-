@@ -76,12 +76,13 @@
       typingEl.remove();
 
       if (!response.ok || !data.answer) {
-        addMessage(
-          data.error === 'Chat is not configured yet'
-            ? "This chat isn't switched on yet — feel free to use the contact form below instead."
-            : "Something went wrong on my end — try again, or use the contact form below.",
-          'bot'
-        );
+        let message = "Something went wrong on my end — try again, or use the contact form below.";
+        if (data.error === 'Chat is not configured yet') {
+          message = "This chat isn't switched on yet — feel free to use the contact form below instead.";
+        } else if (response.status === 429) {
+          message = "I'm getting a lot of questions at once — give me a second and ask again.";
+        }
+        addMessage(message, 'bot');
       } else {
         addMessage(data.answer, 'bot');
         history.push({ role: 'user', content: question });

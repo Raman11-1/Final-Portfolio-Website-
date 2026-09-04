@@ -23,6 +23,32 @@ ${KNOWLEDGE}`;
 const MAX_QUESTION_LENGTH = 500;
 const MAX_HISTORY_TURNS = 6;
 
+// Must be a model listed under Admin -> Limits in the Mistral console. An ID
+// that isn't provisioned there gets an effective limit of zero and every call
+// comes back 429, which reads like a rate-limit problem but isn't one. Note
+// there is no "mistral-small-latest" alias on this account — only dated IDs.
+const MODEL = 'mistral-small-2603';
+
+// The free tier allows 1 request/second, so two messages sent back to back
+// trip a genuine 429. Wait out the window once before surfacing an error.
+const RETRY_DELAY_MS = 1200;
+
+function askMistral(apiKey, messages) {
+  return fetch('https://api.mistral.ai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages,
+      temperature: 0.3,
+      max_tokens: 400,
+    }),
+  });
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -62,23 +88,19 @@ module.exports = async function handler(req, res) {
   ];
 
   try {
-    const upstream = await fetch('https://api.mistral.ai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: 'mistral-small-latest',
-        messages,
-        temperature: 0.3,
-        max_tokens: 400,
-      }),
-    });
+    let upstream = await askMistral(apiKey, messages);
+
+    if (upstream.status === 429) {
+      await new Promise(resolve => setTimeout(resolve, RETRY_DELAY_MS));
+      upstream = await askMistral(apiKey, messages);
+    }
 
     if (!upstream.ok) {
       const errText = await upstream.text();
       console.error('Mistral API error:', upstream.status, errText);
+      if (upstream.status === 429) {
+        return res.status(429).json({ error: 'Too many questions at once' });
+      }
       return res.status(502).json({ error: 'The chat model is unavailable right now' });
     }
 
