@@ -237,12 +237,14 @@
           </div>
           <h3>Fitness Coach — Agentic AI WebApp</h3>
           <p>
-            A hybrid agent-based personal fitness coach built for a hackathon,
-            combining planning, monitoring, reasoning, and motivational agents in
-            a daily goal-oriented loop that adapts plans from user feedback and trends.
+            A hybrid agent-based fitness and habit coach built for a hackathon,
+            where planning, monitoring, reasoning, and motivational agents run a
+            daily goal-oriented loop. Users log workouts, mood, and weight behind
+            JWT auth; a Mistral-backed planner reads those logs and regenerates
+            the schedule, so the plan adapts instead of going stale.
           </p>
           <ul class="tag-list">
-            <li>FastAPI</li><li>React</li><li>MongoDB</li><li>LLMs</li><li>Agentic AI</li>
+            <li>FastAPI</li><li>Next.js</li><li>MongoDB</li><li>Mistral</li><li>Multi-Agent</li><li>Agentic AI</li>
           </ul>
           <a class="project-link" href="https://github.com/Raman11-1/Digital-Health-Coach-master" target="_blank" rel="noopener">View on GitHub ↗</a>
         </article>
@@ -254,12 +256,14 @@
           </div>
           <h3>Tractor Invoice Predictor</h3>
           <p>
-            Extracts structured data from unstructured tractor-invoice images to
-            predict tractor cost automatically — a hands-on pass through Document
-            AI, computer vision, and OCR pipelines under real deployment constraints.
+            Pulls six fields — dealer, model, horsepower, cost, signature, stamp
+            — out of tractor loan invoices that may be digital, scanned, or
+            handwritten, in English, Hindi, or Gujarati. Runs PaddleOCR, EasyOCR,
+            and Tesseract as an ensemble, adds YOLOv8 for signature and stamp
+            boxes, and gates every value against plausibility ranges.
           </p>
           <ul class="tag-list">
-            <li>Document AI</li><li>OCR</li><li>Computer Vision</li><li>Gen AI</li>
+            <li>PaddleOCR</li><li>YOLOv8</li><li>OpenCV</li><li>Document AI</li><li>OCR</li><li>Computer Vision</li>
           </ul>
           <a class="project-link" href="https://github.com/Raman11-1/Tractor_Invoice_Predictor" target="_blank" rel="noopener">View on GitHub ↗</a>
         </article>
@@ -271,12 +275,14 @@
           </div>
           <h3>Height Estate — House Price Prediction</h3>
           <p>
-            A house-price predictor built from scratch — data processing through
-            model training — based on feature engineering and correlation
-            analysis, with a clean Next.js front end.
+            An end-to-end house-price predictor: a RandomForest of 100 trees over
+            13 property and neighbourhood features, served through a FastAPI
+            endpoint with Swagger docs and a Next.js front end. Deployed for real
+            — API on Render, UI on Vercel — with an interactive form that returns
+            a prediction and visualises the result.
           </p>
           <ul class="tag-list">
-            <li>Python</li><li>scikit-learn</li><li>Next.js</li>
+            <li>Python</li><li>scikit-learn</li><li>FastAPI</li><li>Next.js</li><li>TypeScript</li><li>Render</li>
           </ul>
           <a class="project-link" href="https://github.com/Raman11-1/heights-real-estate" target="_blank" rel="noopener">View on GitHub ↗</a>
         </article>
@@ -292,7 +298,8 @@
             tools through an MCP server. Imports CVEs from NVD and issues from
             GitHub, runs AI-powered triage with chip-family detection
             (Intel / AMD / ARM / NVIDIA), and ships custom skills like
-            <code>/bug-triage</code> and <code>/bug-report</code>.
+            <code>/bug-triage</code> and <code>/bug-report</code>, so triage
+            happens inside the editor instead of in a separate dashboard.
           </p>
           <ul class="tag-list">
             <li>Python</li><li>MCP</li><li>Claude Code</li><li>SQLite</li><li>Claude Agent</li><li>Agentic AI</li>
@@ -315,7 +322,7 @@
             0.972–0.986 for spatial-shift augmentation alone.
           </p>
           <ul class="tag-list">
-            <li>PyTorch</li><li>Vision Transformers</li><li>CLIP</li><li>Research</li>
+            <li>PyTorch</li><li>Vision Transformers</li><li>CLIP</li><li>Self-Distillation</li><li>Representation Learning</li><li>Research</li>
           </ul>
           <a class="project-link" href="https://github.com/Raman11-1/VC" target="_blank" rel="noopener">View on GitHub ↗</a>
         </article>
@@ -326,14 +333,15 @@
           </div>
           <h3>This Portfolio — Now with a RAG Chat Assistant</h3>
           <p>
-            The site you're on right now. Next up: a small retrieval-augmented
-            chat widget in the corner that answers recruiter questions —
-            "does he know FastAPI?", "what did he build at Micron?" — using
-            only my resume and project write-ups as context. A live, working
-            example of the RAG pattern instead of just a line on a resume.
+            The site you're on right now, plus the chat widget in the corner —
+            ask it "does he know FastAPI?" or "what did he build at Micron?" and
+            it answers from my actual resume and project write-ups, nothing else.
+            A static front end with a serverless function on Vercel calling the
+            Mistral API: a live, working example of the RAG pattern instead of
+            just a line on a resume.
           </p>
           <ul class="tag-list">
-            <li>RAG</li><li>LLM APIs</li><li>Serverless</li>
+            <li>RAG</li><li>LLM APIs</li><li>Mistral</li><li>Serverless</li><li>Vercel</li><li>Vanilla JS</li>
           </ul>
           <a class="project-link" href="https://github.com/Raman11-1/Final-Portfolio-Website-" target="_blank" rel="noopener">View on GitHub ↗</a>
         </article>

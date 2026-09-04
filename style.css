@@ -294,9 +294,6 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .project-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
-  /* Cards size to their own content instead of stretching to the tallest in
-     the row, so a short write-up never leaves dead space above its tags. */
-  align-items: start;
 }
 .project-card {
   background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
@@ -305,7 +302,8 @@ img { max-width: 100%; display: block; }
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .project-card:hover { border-color: var(--amber-tint); transform: translateY(-4px); box-shadow: var(--shadow-lift); }
-.project-card.featured { grid-column: span 3; }
+.project-card.featured,
+.project-card.building { grid-column: span 3; }
 .project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
 .project-tag {
   font-family: var(--font-mono); font-size: 0.72rem; color: var(--amber-strong);
@@ -314,7 +312,7 @@ img { max-width: 100%; display: block; }
 }
 .project-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint); }
 .project-card h3 { font-family: var(--font-display); font-size: 1.15rem; margin: 0 0 10px; font-weight: 600; color: var(--text); }
-.project-card p { color: var(--text-dim); font-size: 0.94rem; margin: 0 0 18px; }
+.project-card p { color: var(--text-dim); font-size: 0.94rem; margin: 0 0 18px; flex-grow: 1; }
 .tag-list { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; }
 .tag-list li {
   font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim);
@@ -544,7 +542,8 @@ img { max-width: 100%; display: block; }
   .badge-wrap { max-width: 240px; }
   .contact-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
-  .project-card.featured { grid-column: span 2; }
+  .project-card.featured,
+  .project-card.building { grid-column: span 2; }
   .skill-groups { grid-template-columns: 1fr; }
 }
 
@@ -560,7 +559,8 @@ img { max-width: 100%; display: block; }
   .nav-toggle { display: flex; }
   .nav-cta { display: none; }
   .project-grid { grid-template-columns: 1fr; }
-  .project-card.featured { grid-column: span 1; }
+  .project-card.featured,
+  .project-card.building { grid-column: span 1; }
   .edu-grid { grid-template-columns: 1fr; }
   .stat-row { gap: 26px; }
 }
