@@ -1,10 +1,13 @@
 // POST /api/chat  { question: string, history?: [{role, content}, ...] }
 // -> { answer: string }
 //
-// Runs server-side on Vercel. The Mistral API key lives in the
-// MISTRAL_API_KEY environment variable (set in the Vercel dashboard —
-// never in this file, never committed to the repo) so it's never exposed
-// to the browser.
+// Runs server-side on Vercel. The API key lives in the GEMINI_API_KEY
+// environment variable (set in the Vercel dashboard — never in this file,
+// never committed to the repo) so it's never exposed to the browser.
+//
+// This talks to Gemini through its OpenAI-compatible endpoint, so the
+// request and response shapes here are the portable ones: swapping
+// providers means changing API_URL, MODEL, and the env var, nothing else.
 
 const KNOWLEDGE = require('./_knowledge');
 
@@ -23,18 +26,16 @@ ${KNOWLEDGE}`;
 const MAX_QUESTION_LENGTH = 500;
 const MAX_HISTORY_TURNS = 6;
 
-// Must be a model listed under Admin -> Limits in the Mistral console. An ID
-// that isn't provisioned there gets an effective limit of zero and every call
-// comes back 429, which reads like a rate-limit problem but isn't one. Note
-// there is no "mistral-small-latest" alias on this account — only dated IDs.
-const MODEL = 'mistral-small-2603';
+const API_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions';
+const MODEL = 'gemini-3.6-flash';
 
-// The free tier allows 1 request/second, so two messages sent back to back
-// trip a genuine 429. Wait out the window once before surfacing an error.
+// Gemini's free tier allows 15 requests/minute. That is far more than this
+// site needs, but a visitor double-clicking send can still collide, so wait
+// out the window once before surfacing an error.
 const RETRY_DELAY_MS = 1200;
 
-function askMistral(apiKey, messages) {
-  return fetch('https://api.mistral.ai/v1/chat/completions', {
+function askModel(apiKey, messages) {
+  return fetch(API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -68,9 +69,9 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Question is too long' });
   }
 
-  const apiKey = process.env.MISTRAL_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    console.error('MISTRAL_API_KEY is not set in the environment');
+    console.error('GEMINI_API_KEY is not set in the environment');
     return res.status(500).json({ error: 'Chat is not configured yet' });
   }
 
@@ -88,16 +89,16 @@ module.exports = async function handler(req, res) {
   ];
 
   try {
-    let upstream = await askMistral(apiKey, messages);
+    let upstream = await askModel(apiKey, messages);
 
     if (upstream.status === 429) {
       await new Promise(resolve => setTimeout(resolve, RETRY_DELAY_MS));
-      upstream = await askMistral(apiKey, messages);
+      upstream = await askModel(apiKey, messages);
     }
 
     if (!upstream.ok) {
       const errText = await upstream.text();
-      console.error('Mistral API error:', upstream.status, errText);
+      console.error('Chat model API error:', upstream.status, errText);
       if (upstream.status === 429) {
         return res.status(429).json({ error: 'Too many questions at once' });
       }
