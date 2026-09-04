@@ -56,31 +56,49 @@ PROJECTS
    cost-per-run and accuracy benchmarking. Stack: Python, LLM Agents,
    Evaluation Loops, Firmware Logs.
 
-2. Fitness Coach — Agentic AI WebApp (Feb-Mar 2026, hackathon project). A
+2. GraphRAG-ArXiv — Knowledge Graph + Vector RAG (Sep 2026, latest
+   project). A question-answering system over research papers that combines
+   vector retrieval with a knowledge graph and routes each question to
+   whichever can actually answer it, covering the three cases plain RAG
+   fails on: relationship discovery across papers, corpus-wide aggregation,
+   and thematic synthesis. Uses dual chunking — small ~800-token chunks for
+   vector/BM25 indexing, wide ~4,000-token windows for LLM triple
+   extraction — with a router that picks vector, graph, global, or hybrid
+   mode and falls back to passage retrieval when routing errs. Ships
+   provenance tracking with character spans and confidence scores, citation
+   validation against false attributions, Cypher injection protection,
+   checkpointed extraction that resumes failed runs, entity resolution with
+   numeric validation, and an evaluation harness benchmarking BM25 vs
+   vector vs hybrid vs GraphRAG. 240 tests. Stack: Python 3.13, Kuzu graph
+   database, Chroma, fastembed (local ONNX embeddings), Mistral API or
+   Claude, FastAPI, Streamlit, Leiden community detection.
+   Repo: github.com/Raman11-1/graphrag-arxiv
+
+3. Fitness Coach — Agentic AI WebApp (Feb-Mar 2026, hackathon project). A
    hybrid agent-based personal fitness coach combining planning, monitoring,
    reasoning, and motivational agents in a daily goal-oriented loop that
    adapts plans from user feedback and trends. Stack: FastAPI, React,
    MongoDB, LLMs.
 
-3. Tractor Invoice Predictor (Apr-May 2026). Extracts structured data from
+4. Tractor Invoice Predictor (Apr-May 2026). Extracts structured data from
    unstructured tractor-invoice images to predict tractor cost automatically
    — a hands-on pass through Document AI, computer vision, and OCR
    pipelines under real deployment constraints. Stack: Document AI, OCR,
    Computer Vision.
 
-4. Height Estate — House Price Prediction (Dec 2025-Jan 2026). A
+5. Height Estate — House Price Prediction (Dec 2025-Jan 2026). A
    house-price predictor built from scratch, data processing through model
    training, based on feature engineering and correlation analysis, with a
    Next.js front end. Stack: Python, scikit-learn, Next.js.
 
-5. Bug Tracking System — MCP Server for Claude Code (2026). A
+6. Bug Tracking System — MCP Server for Claude Code (2026). A
    semiconductor-focused bug tracker exposed as native Claude Code tools
    through an MCP server. Imports CVEs from NVD and issues from GitHub, runs
    AI-powered triage with chip-family detection (Intel/AMD/ARM/NVIDIA), and
    ships custom skills like /bug-triage and /bug-report. Stack: Python, MCP,
    Claude Code, SQLite. Repo: github.com/Raman11-1/Bug_Tracking_System
 
-6. PH-Reg — Self-Distilled Registers for ViTs (IIT Hyderabad Visual
+7. PH-Reg — Self-Distilled Registers for ViTs (IIT Hyderabad Visual
    Computing coursework, 2026). Reproduced PH-Reg, which uses
    self-distillation to strip artifact tokens out of Vision Transformer
    features, then extended it with two original contributions —
@@ -89,14 +107,14 @@ PROJECTS
    for spatial-shift augmentation alone. Stack: PyTorch, Vision
    Transformers, CLIP, Research. Repo: github.com/Raman11-1/VC
 
-7. This portfolio website, including this chat assistant. Built as a static
+8. This portfolio website, including this chat assistant. Built as a static
    site (HTML/CSS/JS) with a serverless function on Vercel that calls the
    Mistral API to power this chat — a working example of a RAG-style
    assistant grounded only in Raman's real resume and project content.
 
 SKILLS
 AI/ML & Generative AI: Agentic AI Systems, LLM Application Development,
-Generative AI, Evaluation Loops.
+Generative AI, RAG and GraphRAG, Knowledge Graphs, Evaluation Loops.
 Frontend & Data: React.js, Next.js, Mantine UI, Bootstrap, Data Analysis,
 Data Visualization.
 Tools & Backend: Python, FastAPI, MongoDB, GCP, Git, Jira, Confluence,
